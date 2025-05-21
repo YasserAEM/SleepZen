@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">SleepZen</string>
+    <string name="title_sleep">Sleep</string>
+    <string name="title_relax">Relax</string>
+    <string name="title_habits">Habits</string>
+    <string name="title_history">History</string>
+</resources>

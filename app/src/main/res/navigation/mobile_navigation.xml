@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_sleep">
+
+    <fragment
+        android:id="@+id/navigation_sleep"
+        android:name="com.drwich.sleepzen.ui.sleep.SleepFragment"
+        android:label="Sleep"
+        tools:layout="@layout/fragment_sleep" />
+
+    <fragment
+        android:id="@+id/navigation_relax"
+        android:name="com.drwich.sleepzen.ui.relax.RelaxContainerFragment"
+        android:label="Relax"
+        tools:layout="@layout/fragment_relax_container" />
+
+    <fragment
+        android:id="@+id/navigation_habits"
+        android:name="com.drwich.sleepzen.ui.habits.HabitsFragment"
+        android:label="Habits"
+        tools:layout="@layout/fragment_habits" />
+
+    <fragment
+        android:id="@+id/navigation_history"
+        android:name="com.drwich.sleepzen.ui.history.HistoryFragment"
+        android:label="History"
+        tools:layout="@layout/fragment_history" />
+</navigation>

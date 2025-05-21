@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Base light theme: material components, no night variants -->
+    <style name="Theme.SleepZen" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Core brand colors (we'll tweak these later) -->
+        <item name="colorPrimary">#FF9800</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+        <item name="colorSecondary">#FF9800</item>
+        <item name="colorOnSecondary">@color/white</item>
+
+        <!-- Surface & background -->
+        <item name="colorSurface">#262661</item>
+        <item name="colorOnSurface">@color/white</item>
+        <item name="android:colorBackground">#262661</item>
+        <item name="colorOnBackground">@color/white</item>
+
+        <!-- Status bar / nav bar -->
+        <item name="android:statusBarColor">@color/brandPrimaryDark</item>
+        <item name="android:navigationBarColor">@color/white</item>
+
+        <!-- Typography defaults -->
+        <item name="textAppearanceHeadline1">@style/TextAppearance.SleepZen.Headline1</item>
+        <item name="textAppearanceBody1">@style/TextAppearance.SleepZen.Body1</item>
+
+        <!-- Shape theming -->
+        <item name="shapeAppearanceSmallComponent">@style/Shape.SleepZen.Small</item>
+        <item name="shapeAppearanceMediumComponent">@style/Shape.SleepZen.Medium</item>
+        <item name="shapeAppearanceLargeComponent">@style/Shape.SleepZen.Large</item>
+    </style>
+
+    <!-- Example text styles -->
+    <style name="TextAppearance.SleepZen.Headline1" parent="TextAppearance.MaterialComponents.Headline1">
+        <item name="fontFamily">@font/roboto_medium</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+    <style name="TextAppearance.SleepZen.Body1" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="fontFamily">@font/roboto_regular</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <!-- Example shape styles -->
+    <style name="Shape.SleepZen.Small" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">4dp</item>
+    </style>
+    <style name="Shape.SleepZen.Medium" parent="ShapeAppearance.MaterialComponents.MediumComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">8dp</item>
+    </style>
+    <style name="Shape.SleepZen.Large" parent="ShapeAppearance.MaterialComponents.LargeComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">16dp</item>
+    </style>
+
+    <style name="CalendarHeader.White" parent="TextAppearance.MaterialComponents.Subtitle1">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <!-- the Sun, Mon, Tue ... -->
+    <style name="CalendarWeekday.White" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <!-- the individual date numbers -->
+    <style name="CalendarDate.White" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+</resources>

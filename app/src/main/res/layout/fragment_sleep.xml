@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/sleep_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+
+    <Button
+        android:id="@+id/btnPickTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Set Wake-up Time"
+        android:textColor="@color/white"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:id="@+id/tvChosenTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No wake-up time set"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:layout_marginBottom="32dp"/>
+
+    <Button
+        android:id="@+id/btnStartSleep"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start Sleep"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?attr/colorOnSurface"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:id="@+id/tvDarkModeLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Auto DnD mode at:"
+        android:textSize="18sp"
+        android:textColor="@color/white"
+        android:layout_marginBottom="8dp"/>
+
+    <TextView
+        android:id="@+id/tvDarkModeTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Not set"
+        android:textSize="16sp"
+        android:textColor="@color/white"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:id="@+id/btnPickDarkModeTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Set DnD-Mode Time" />
+</LinearLayout>

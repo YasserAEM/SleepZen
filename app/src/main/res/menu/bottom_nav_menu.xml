@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_sleep"
+        android:icon="@drawable/sleep_24"
+        android:title="Sleep" />
+
+    <item
+        android:id="@+id/navigation_relax"
+        android:icon="@drawable/meditate_24"
+        android:title="@string/title_relax" />
+
+    <item
+        android:id="@+id/navigation_habits"
+        android:icon="@drawable/checklist_24"
+        android:title="Habits" />
+
+    <item
+        android:id="@+id/navigation_history"
+        android:icon="@drawable/calendar_24"
+        android:title="History" />
+
+</menu>
