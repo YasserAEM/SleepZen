@@ -24,18 +24,51 @@ public class SleepAlarmReceiver extends BroadcastReceiver {
         String action = intent.getAction();
         if (action == null) return;
 
-        long wakeTime = intent.getLongExtra(EXTRA_WAKEUP_TIME, -1);
+        if (ACTION_END_SESSION.equals(action)) {
+            // 1) Prepare full-screen intent for AlarmActivity
+            Intent fullScreenIntent = new Intent(context, AlarmActivity.class)
+                    .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            PendingIntent fullScreenPi = PendingIntent.getActivity(
+                    context,
+                    0,
+                    fullScreenIntent,
+                    PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE
+            );
 
-        if (ACTION_CHECK_PHASE.equals(action)) {
-            // votre logique de check de phase…
-            // si encore pas en phase légère, replanifier un nouveau CHECK_PHASE
-        }
-        else if (ACTION_END_SESSION.equals(action)) {
-            // notification full-screen → AlarmActivity
-            // … (code déjà en place) …
+            // 2) Create or update notification channel
+            String channelId = "sleepzen_alarm_channel";
+            NotificationManager nm =
+                    (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                NotificationChannel chan = new NotificationChannel(
+                        channelId,
+                        "SleepZen Alarm",
+                        NotificationManager.IMPORTANCE_HIGH
+                );
+                chan.setLockscreenVisibility(NotificationCompat.VISIBILITY_PUBLIC);
+                nm.createNotificationChannel(chan);
+            }
 
-            // broadcast local vers SleepFragment
+            // 3) Build and fire the notification
+            NotificationCompat.Builder nb = new NotificationCompat.Builder(context, channelId)
+                    .setSmallIcon(R.drawable.alarm_24)
+                    .setContentTitle("Sleep session ended")
+                    .setContentText("Tap to stop or snooze")
+                    .setPriority(NotificationCompat.PRIORITY_HIGH)
+                    .setCategory(NotificationCompat.CATEGORY_ALARM)
+                    .setDefaults(NotificationCompat.DEFAULT_ALL)
+                    .setFullScreenIntent(fullScreenPi, true)
+                    .setContentIntent(fullScreenPi)
+                    .setAutoCancel(true);
+
+            nm.notify(1001, nb.build());
+
+            // 4) Also send local broadcast so SleepFragment updates its UI
             sendEndBroadcast(context);
+        }
+        else if (ACTION_CHECK_PHASE.equals(action)) {
+            // TODO: implement your phase‐check logic here,
+            //       and if still not in light sleep, reschedule another check.
         }
     }
 

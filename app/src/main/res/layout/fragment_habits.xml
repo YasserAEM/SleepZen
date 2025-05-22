@@ -25,6 +25,7 @@
         android:layout_height="0dp"
         android:clipToPadding="false"
         android:paddingBottom="72dp"
+        android:paddingTop="20dp"
         app:layout_constraintTop_toBottomOf="@id/tvHabitsHeader"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
