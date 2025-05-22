@@ -10,11 +10,8 @@
 - [Architecture](#architecture)  
 - [Prerequisites](#prerequisites)  
 - [Project Structure](#project-structure)  
-- [Installation & Setup](#installation--setup)  
-- [Usage](#usage)  
-- [Screenshots](#screenshots)  
-- [Contributing](#contributing)  
-- [License](#license)  
+- [Installation](#installation)  
+- [Usage](#usage)   
 
 ---
 
@@ -67,3 +64,47 @@
 
 ## Project Structure
 
+app/
+├── src/main/
+│ ├── java/com/drwich/sleepzen/
+│ │ ├── data/ # Room database, DAOs, repositories
+│ │ ├── model/ # Entity & domain classes
+│ │ ├── ui/
+│ │ │ ├── sleep/ # SleepFragment, ViewModel, scheduler, AlarmActivity
+│ │ │ ├── relax/ # RelaxContainer, Meditate & Sounds fragments & adapters
+│ │ │ ├── habits/ # HabitsFragment & ViewModel
+│ │ │ └── history/ # HistoryFragment, ViewModel & decorators
+│ │ └── MainActivity.java
+│ └── res/
+│ ├── layout/ # XML layouts
+│ ├── drawable/ # Icons & vector assets
+│ ├── mipmap/ # Launcher icons
+│ ├── values/ # themes, colors, strings
+│ └── raw/ # alarm_sound.mp3
+└── build.gradle.kts
+
+## Installation
+
+Simply download the .apk file and run it.
+
+## Usage
+
+### 📱 Sleep Tab
+- Pick your target **wake-up time**.
+- Tap **Start Sleep** (grant `RECORD_AUDIO` permission).
+- The app records your sleep and schedules *smart wake* alarms using phase checks.
+
+### 🧘 Relax Tab
+- Toggle between **Meditate** and **Sounds** modes.
+- Tap any item to **start/stop** playback.
+
+### ✅ Habits Tab
+- Check off **built-in habits** or add your own.
+- Habit states **reset every 8 hours** automatically.
+
+### 📅 History Tab
+- View a **color-coded calendar** of your sleep quality.
+- Tap any day to see **duration & quality** details.
+
+### 🌙 Dark Mode Scheduler
+- Set a time to **automatically enable Do-Not-Disturb** and **dark theme**.
